@@ -1,0 +1,466 @@
+@import url('./global.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
+
+/* ============== GLOBAL ============== */
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    color: currentColor;
+}
+
+:root {
+    --primary-blue: #30b0ff;
+    --secundary-blue: #105DD1;
+    --dark-gray: rgb(84, 84, 84);
+
+    --fs-normal: 1.6rem;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 82%;
+    min-height: 100vh;
+    max-width: 1120px;
+    margin: auto;
+    padding: 8rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    border-bottom: 5px solid var(--primary-blue);
+    display: inline-block;
+    width: fit-content;
+}
+
+/* ============== NAV ============== */
+.navigator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem;
+    position: absolute;
+    z-index: 2;
+}
+
+.menu {
+    display: flex;
+    gap: 1.6rem;
+    margin-block: 0.6rem;
+    transition: .3s;
+}
+
+.menu-item {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+/* ============== PRESENTATION ============== */
+#presentation {
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;   
+    position: relative;
+    z-index: 1;
+}
+
+#presentation::before {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.presentation {
+    justify-content: center;
+}
+
+.presentation-main {
+    font-size: 2.4rem;
+    color: #fff;
+    height: fit-content;
+}
+
+.presentation h1 {
+    width: fit-content;
+    transform: translateY(-40px);
+    opacity: 0;
+    animation: presentation-text-appear 1s ease forwards;
+}
+
+.presentation h1:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.presentation h1:nth-child(3) {
+    animation-delay: .4s;
+}
+
+
+/* .presentation h1::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-blue);
+    position: absolute;
+    left: 0;
+    width: 0;
+    animation: presentation-animation .6s ease forwards;
+}
+
+.presentation h1:nth-child(1)::after {
+    animation-delay: 1s;
+}
+
+.presentation h1:nth-child(2)::after {
+    animation-delay: 1.2s;
+}
+
+.presentation h1:nth-child(3)::after {
+    animation-delay: 1.4s;
+} */
+
+.btn {
+    background-color: transparent;
+    border: 3px solid var(--primary-blue);
+    border-radius: 6px;
+    color: var(--primary-blue);
+    font-size: var(--fs-normal);
+    font-weight: 700;
+    padding: 1.2rem;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    display: inline-block;
+    transition: .3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+
+/* ============== PORTFOLIO ============== */
+.portfolio {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 8rem 0;
+}
+
+.portfolio-header {
+    margin-bottom: 2rem;
+}
+
+.projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    width: 30rem;
+    height: 45rem;
+    background: linear-gradient(90.32deg, #105DD1 0.27%, #30B0FF 99.72%);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform .5s ease;
+}
+
+.project-item:hover {
+    transform: scale(105%);
+}
+
+.project-info {
+    padding: 1.2rem;
+    color: #fff;
+    font-size: var(--fs-normal);
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+
+    gap: .8rem;
+}
+
+.project-link {
+    display: flex;
+    text-align: center;
+    color: #fff;
+    font-size: var(--fs-normal);
+    align-self: flex-start;
+    padding: .8rem;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    font-weight: 700;
+    margin-left: 1.2rem;
+    position: absolute;
+    top: 43%;
+    transition: .3s ease;
+}
+
+.project-link:hover {
+    color: var(--secundary-blue);
+    background-color: #fff;
+}
+
+.project-img {
+    width: 100%;
+    height: 45%;
+    
+}
+
+.project-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ============== ABOUT ME ============== */
+#aboutme {
+    /* background-image: url('../img/coding-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center; */
+    background-color: #d3efff;
+}
+
+.aboutme {
+    min-height: fit-content;
+}
+
+.aboutme-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.aboutme-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.aboutme-main h3 {
+    font-size: 2.3rem;
+}
+
+.aboutme-learning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.aboutme-list {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    gap: 2.5rem;
+}
+
+.aboutme-list li {
+    transition: transform .5s ease;
+    
+}
+
+.aboutme-list li:hover {
+    transform: translateX(50px);
+    opacity: 0.5;
+}
+
+#aboutme.active .aboutme-list li {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: .8rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slide-from-left 1s ease forwards;
+}
+
+#aboutme.active .aboutme-list li:nth-child(2) {
+    animation-delay: .2s;
+}
+
+#aboutme.active .aboutme-list li:nth-child(3) {
+    animation-delay: .4s;
+}
+
+#aboutme.active .aboutme-list li:nth-child(4) {
+    animation-delay: .6s;
+}
+
+/* ============== CONTACT ============== */
+#contact {
+    height: 60vh;
+}
+
+.contact {
+    min-height: 100%;
+}
+
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 31.5rem;
+    border-radius: 6px;
+    color: var(--dark-gray);
+    font-weight: 600;
+    gap: 1rem;
+    padding: 1rem;
+    border: 3px solid var(--primary-blue);
+}
+
+.contact-list li i {
+    font-size: 2rem;
+}
+
+.contact-list li a{
+    color: inherit;
+    width: 90%;
+}
+
+/* ============== FOOTER ============== */
+footer {
+    background-color: var(--secundary-blue);
+}
+
+.footer {
+    min-height: 20vh;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 3rem;
+    gap: 3rem;
+}
+
+.footer-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.footer-main {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    justify-content: space-evenly;
+
+}
+
+.footer-credits {
+    max-width: 110px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    color: #fff;
+}
+
+.social-links li {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social-links li a {
+    align-self: flex-end;
+}
+
+
+
+
+
+
+
+/* ============== ANIMATIONS ============== */
+
+
+@keyframes presentation-text-appear {
+    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-from-left {
+    
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ============== MEDIA QUERIES ============== */
+@media (min-width: 1000px) {
+    
+    .presentation-main {
+        font-size: 2.9rem;
+    }
+
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .aboutme-text {
+        font-size: 2.3rem;
+        font-weight: 700;
+    }
+
+    .aboutme-main {
+        flex-direction: row;
+        gap: 4rem;
+        align-items: flex-start;
+    }
+
+    .aboutme-main > * {
+        width: 50%;
+    }
+
+}
