@@ -411,8 +411,28 @@ footer {
     align-self: flex-end;
 }
 
+/* ============== BACK TO THE TOP BUTTON ============== */
+#back-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    z-index: 10;
+    bottom: 30px;
+    right: 30px;
+    background-color: #00388d;
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    opacity: 0;
+    transition: .5s ease;
+}
 
-
+#back-top.show {
+    opacity: 1;
+}
 
 
 
