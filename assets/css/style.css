@@ -289,8 +289,12 @@ html {
 }
 
 .aboutme-list li {
-    transition: transform .5s ease;
-    
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: .8rem;
+    opacity: 0;
+    transform: translateX(-20px);   
 }
 
 .aboutme-list li:hover {
@@ -299,12 +303,6 @@ html {
 }
 
 #aboutme.active .aboutme-list li {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: .8rem;
-    opacity: 0;
-    transform: translateX(-20px);
     animation: slide-from-left 1s ease forwards;
 }
 
