@@ -366,10 +366,10 @@ footer {
 }
 
 .footer {
-    min-height: 20vh;
+    min-height: auto;
     color: #fff;
     font-size: 1.4rem;
-    padding: 3rem;
+    padding: 5rem 3rem;
     gap: 3rem;
 }
 
