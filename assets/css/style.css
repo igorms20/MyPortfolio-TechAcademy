@@ -28,6 +28,10 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 
+section {
+    padding-bottom: 7rem;
+}
+
 .container {
     width: 82%;
     min-height: 100vh;
@@ -319,10 +323,6 @@ html {
 }
 
 /* ============== CONTACT ============== */
-#contact {
-    height: 60vh;
-}
-
 .contact {
     min-height: 100%;
 }
