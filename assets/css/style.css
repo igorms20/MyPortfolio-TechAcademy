@@ -67,6 +67,7 @@ section {
 
 .menu {
     display: flex;
+    align-items: center;
     gap: 1.6rem;
     margin-block: 0.6rem;
     transition: .3s;
@@ -78,6 +79,28 @@ section {
     font-size: 1.4rem;
     font-weight: 600;
 }
+
+/* HAMBURGER MENU */
+.menu-button {
+    display: none;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    cursor: pointer;
+
+}
+
+.bar {
+    display: block;
+    background-color: #fff;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    border-radius: 6px;
+    opacity: 1;
+    transition: .3s ease-in-out;
+}
+
 
 
 /* ============== PRESENTATION ============== */
@@ -485,4 +508,60 @@ footer {
         width: 50%;
     }
 
+}
+
+@media (max-width: 768px) {
+
+    .menu-button.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-button.active .bar:nth-child(1) {
+        transform: rotate(45deg) translateY(8px) translateX(3px);
+    }
+
+    .menu-button.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px) translateX(3px);
+    }
+
+    .navigator {
+        padding: 0;        
+        
+    }
+    
+    .menu-button {
+        display: block;
+    }
+
+    .menu-button.active {
+        position: fixed
+    }
+
+    .menu {
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        height: 60vh;
+        width: 100%;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        opacity: 0;
+        gap: 4rem;        
+        margin: 0;
+        transition: .3s ease;
+    }
+
+    .navigator.active .menu {
+        left: 0;
+        opacity: 1;
+    }
+
+    .menu-item {
+        font-size: 1.7rem;
+        border-bottom: 1px solid #fff;
+        padding-bottom: .7rem;
+        color: var(--primary-blue);
+        font-weight: 700;
+    }
 }

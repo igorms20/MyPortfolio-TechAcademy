@@ -18,3 +18,24 @@ function scrollEvent() {
         }
     }
 }
+
+
+const nav = document.querySelector('.navigator')
+const menuBtn = document.querySelector('.menu-button')
+
+menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active")
+    nav.classList.toggle("active")
+})
+
+const menuItems = document.getElementsByClassName('menu-item')
+
+for (let i = 0; i < menuItems.length; i++) {
+    const menuItem = menuItems[i];
+
+    menuItem.addEventListener("click", () => {
+        nav.classList.remove('active')
+        menuBtn.classList.remove('active')
+    })
+    
+}
